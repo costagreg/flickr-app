@@ -5,8 +5,19 @@ body {
   margin: 0;
   padding: 0;
 }
-a{
+a {
   cursor: pointer;
+  color: #128fdc;
+  text-decoration: underline;
+  &:hover{
+    text-decoration: none;
+  }
+}
+h2,
+h3 {
+  a {
+    color: #212124;
+  }
 }
 html,
 body {
@@ -65,22 +76,28 @@ body {
       align-content: center;
       padding: 5px 0;
       line-height: 30px;
-      align-items:center;
-      .back-button{
+      align-items: center;
+      .back-button {
         flex: 1;
         text-align: right;
+        a {
+          background: url("./images/left-arrow.svg") left center no-repeat;
+          background-size: 10px auto;
+          padding: 0 15px;
+          text-decoration: underline;
+        }
       }
     }
-    .article-details{
+    .article-details {
       padding: 10px 0;
     }
-    .article-tags{
+    .article-tags {
       display: flex;
-      ul{
+      ul {
         display: flex;
         list-style: none;
         flex-wrap: wrap;
-        li{
+        li {
           padding: 0 5px;
         }
       }
@@ -90,7 +107,7 @@ body {
       .col-left {
         flex: 0 0 150px;
       }
-      .col-right{
+      .col-right {
         padding: 0 0 0 10px;
       }
     }

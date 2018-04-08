@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Moment from 'react-moment';
+import Moment from "react-moment";
 
 class FeedDetail extends Component {
   render() {
     const { data } = this.props;
     const tags = data.tags.split(" ");
     const rawDescription = data.description.match(/<p>.*?<\/p>/g);
-    const description = rawDescription.length >= 3 ? rawDescription[2] : ''
-
+    const description = rawDescription.length >= 3 ? rawDescription[2] : "";
+    const authorLink = `https://www.flickr.com/photos/${data.author_id}`;
     return (
       <article>
         <header>
@@ -17,22 +17,24 @@ class FeedDetail extends Component {
               {data.title}
             </a>
           </h2>
-          <a className="back-button" onClick={this.props.onClickBack}>
-            Back
-          </a>
+          <div className="back-button">
+            <a onClick={this.props.onClickBack}>
+              Back
+            </a>
+          </div>
         </header>
         <div className="article-details">
-          <a
-            href={`https://www.flickr.com/photos/${data.author_id}`}
-            target="_blank"
-          >
+          <a href={authorLink} target="_blank">
             Photo author
           </a>{" "}
-          | Published: <Moment format="Do MMM YYYY [at] kk:mm">{data.date_taken}</Moment>
+          | Published:{" "}
+          <Moment format="Do MMM YYYY [at] kk:mm">{data.date_taken}</Moment>
         </div>
         <div className="article-body">
           <div className="col-left">
-            <img alt={data.title} src={data.media.m} />
+            <a href={data.link} target="_blank">
+              <img alt={data.title} src={data.media.m} />
+            </a>
           </div>
           <div className="col-right">
             <p dangerouslySetInnerHTML={{ __html: description }} />

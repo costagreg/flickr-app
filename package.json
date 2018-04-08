@@ -33,7 +33,8 @@
     "file-loader": "1.1.11",
     "css-loader": "0.28.11",
     "sass-loader": "6.0.7",
-    "node-sass": "4.8.3"
+    "node-sass": "4.8.3",
+    "svg-url-loader":"2.3.2"
   },
   "dependencies": {
     "moment": "^2.22.0",

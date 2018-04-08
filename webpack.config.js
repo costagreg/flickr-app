@@ -35,14 +35,12 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: "Flickr App",
       template: "src/index.html"
     })
   ],
   devServer: {
-    contentBase: "./dist",
-    hot: true
+    contentBase: "./dist"
   }
 };

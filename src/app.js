@@ -1,13 +1,15 @@
 import React,{Component} from 'react'
 import ReactDOM from 'react-dom'
+import FeedList from './components/FeedList'
+
 import './style/default.scss'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Hello World!</h1>
-      </div>
+        <section className='feed-list'>
+          <FeedList/>
+        </section>
     )
   }
 }

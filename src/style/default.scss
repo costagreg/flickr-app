@@ -1,8 +1,12 @@
 ul,
+h2,
 h3,
 body {
   margin: 0;
   padding: 0;
+}
+a{
+  cursor: pointer;
 }
 html,
 body {
@@ -49,6 +53,45 @@ body {
         li {
           padding: 0 20px 0 0;
         }
+      }
+    }
+  }
+}
+.feed-detail {
+  padding: 20px;
+  article {
+    header {
+      display: flex;
+      align-content: center;
+      padding: 5px 0;
+      line-height: 30px;
+      align-items:center;
+      .back-button{
+        flex: 1;
+        text-align: right;
+      }
+    }
+    .article-details{
+      padding: 10px 0;
+    }
+    .article-tags{
+      display: flex;
+      ul{
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        li{
+          padding: 0 5px;
+        }
+      }
+    }
+    .article-body {
+      display: flex;
+      .col-left {
+        flex: 0 0 150px;
+      }
+      .col-right{
+        padding: 0 0 0 10px;
       }
     }
   }

@@ -26,8 +26,8 @@ class FeedDetail extends Component {
         <div className="article-details">
           <a href={authorLink} target="_blank">
             Photo author
-          </a>{" "}
-          | Published:{" "}
+          </a>
+          | Published:
           <Moment format="Do MMM YYYY [at] kk:mm">{data.date_taken}</Moment>
         </div>
         <div className="article-body">

@@ -27,7 +27,7 @@ class FeedListItem extends Component {
               </a>
             </li>
             <li className="date">
-              Published on{" "}
+              Published on
               <Moment format="Do MMM YYYY [at] kk:mm">{data.date_taken}</Moment>
             </li>
             <li className="view-flicker">

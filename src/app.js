@@ -14,7 +14,6 @@ class App extends Component {
       error: false,
       currentItem: null
     };
-
     this.onClickBack = this.onClickBack.bind(this);
     this.onClickItem = this.onClickItem.bind(this);
   }

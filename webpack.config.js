@@ -17,20 +17,20 @@ module.exports = {
             loader: "style-loader"
           },
           {
-            loader: "css-loader" 
+            loader: "css-loader"
           },
           {
-            loader: "sass-loader" 
+            loader: "sass-loader"
           }
         ]
       },
       {
-                test: /\.svg/,
-                use: {
-                    loader: 'svg-url-loader',
-                    options: {}
-                }
-            }
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader",
+          options: {}
+        }
+      }
     ]
   },
   resolve: {

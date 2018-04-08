@@ -18,9 +18,7 @@ class FeedDetail extends Component {
             </a>
           </h2>
           <div className="back-button">
-            <a onClick={this.props.onClickBack}>
-              Back
-            </a>
+            <a onClick={this.props.onClickBack}>Back</a>
           </div>
         </header>
         <div className="article-details">

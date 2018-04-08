@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import FeedList from "./components/FeedList";
 import FeedDetail from "./components/FeedDetail";
+import SearchInput from "./components/SearchInput";
 
 import "./style/default.scss";
 
@@ -12,10 +13,12 @@ class App extends Component {
       data: [],
       loading: true,
       error: false,
-      currentItem: null
+      currentItem: null,
+      searchText: ""
     };
     this.onClickBack = this.onClickBack.bind(this);
     this.onClickItem = this.onClickItem.bind(this);
+    this.onChangeSearch = this.onChangeSearch.bind(this);
   }
   componentDidMount() {
     // Fetch JSONP data from Flickr public api
@@ -45,7 +48,11 @@ class App extends Component {
       currentItem: null
     });
   }
+  onChangeSearch(text) {
+    this.setState({ searchText: text.value });
+  }
   render() {
+    console.log('yeah')
     if (this.state.currentItem) {
       return (
         <section className="feed-detail">
@@ -56,9 +63,17 @@ class App extends Component {
         </section>
       );
     } else {
+      const items = this.state.data.filter((item)=>{
+        return this.state.searchText === '' || item.tags.indexOf(this.state.searchText) >= 0 
+      })
       return (
-        <section className="feed-list">
-          <FeedList data={this.state.data} onClickItem={this.onClickItem} />
+        <section>
+          <section className="search">
+            <SearchInput onChange={this.onChangeSearch} searchText={this.state.searchText}/>
+          </section>
+          <section className="feed-list">
+            <FeedList data={items} onClickItem={this.onClickItem} />
+          </section>
         </section>
       );
     }
